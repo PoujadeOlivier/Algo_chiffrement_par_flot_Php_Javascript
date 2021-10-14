@@ -94,9 +94,9 @@ function TunnelRC4_PHP($key, $pt, $base64) {
 }
 
 
-$cypertext = TunnelRC4_PHP('secret','il pleut','base64_encode');
-echo $cypertext;
-$plaintext = TunnelRC4_PHP('secret',$cypertext,'base64_decode');
+$cyphertext = TunnelRC4_PHP('secret','il pleut','base64_encode');
+echo $cyphertext;
+$plaintext = TunnelRC4_PHP('secret',$cyphertext,'base64_decode');
 echo $plaintext;
 ?>
 
@@ -197,9 +197,9 @@ function rc4Encrypt(key, pt, base64) {
 //alert(rc4Encrypt('cle','Coucou ! c\'est oliv'));
 //alert(rc4Encrypt('cle',rc4Encrypt('cle','Coucou ! c\'est oliv')));
 
-var toto = rc4Encrypt('secret','il pleut','btoa');
-var toto2 = rc4Encrypt('secret',toto,'atob');
-alert(toto+'\n'+toto2);
+var cyphertext = rc4Encrypt('secret','il pleut','btoa');
+var plaintext = rc4Encrypt('secret',cyphertext,'atob');
+alert(cyphertext+'\n'+plaintext);
 
 
 //faire un base64_encode = btoa() et base64_decode = atob() sur le résultat final pour la transmission sur le réseau
