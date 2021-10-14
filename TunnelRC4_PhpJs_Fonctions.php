@@ -110,7 +110,7 @@ function TunnelRC4_PHP($key, $pt, $base64) {
 		//olivier : modification au code original
 		//$ct .= $pt[$y] ^ chr($s[($s[$i] + $s[$j]) % 256]);
 		
-		//On ne tient pas compte des 2303 première itération trop prédictives !!
+		//On ne tient pas compte des 2303 premières itérations trop prédictives !! (ndop)
 		if ($y > 2303) {
 			$ct .= $pt[$y - 2304] ^ chr($s[($s[$i] + $s[$j]) % 256]);
 			
